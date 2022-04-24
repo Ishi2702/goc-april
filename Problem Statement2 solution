@@ -1,0 +1,20 @@
+//Solution for statement2
+class Sol2 {
+    int total = 0;
+    //counting no. of vowel strings
+    public int count_vowel_strs(int n) {
+        h(n, 0, 0);
+        return total;
+    }
+    //checking condition for lexicographically sorted
+    public void h(int n, int curr_index, int curr_size) {
+        if (curr_size == n) {
+            total++;
+            return;
+        }
+        for (int i = curr_index; i < 5; i++) {
+            h(n, i, ++curr_size);
+            curr_size --;
+        }
+    }
+}
